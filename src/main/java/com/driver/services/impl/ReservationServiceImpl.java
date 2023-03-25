@@ -29,9 +29,12 @@ public class ReservationServiceImpl implements ReservationService {
   ParkingLot parkingLot=parkingLotRepository3.findById(parkingLotId).get();
     Reservation reservation=new Reservation();
     reservation.setNumberOfHours(timeInHours);
+    reservation.setUser(user);
 
 
 
-        return null;
+
+
+        return reservation;
     }
 }
