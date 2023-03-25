@@ -17,7 +17,7 @@ public class Spot {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
    private int id;
    private SpotType spotType;
-  private    int priceForHour;
+  private    int pricePerHour;
   private boolean occupied;
 
     public Spot() {
@@ -29,7 +29,7 @@ public class Spot {
     public Spot(int id, SpotType spotType, int priceForHour, boolean occupied) {
         this.id = id;
         this.spotType = spotType;
-        this.priceForHour = priceForHour;
+        this.pricePerHour = priceForHour;
         this.occupied = occupied;
     }
 
@@ -38,7 +38,6 @@ public class Spot {
     private ParkingLot parkingLot;
 //parent class
     @OneToMany(mappedBy = "spot",cascade = CascadeType.ALL)
-
    private List<Reservation> reservationList=new ArrayList<>();
 
     public ParkingLot   getParkingLot() {
@@ -73,13 +72,16 @@ public class Spot {
         this.spotType = spotType;
     }
 
-    public int getPriceForHour() {
-        return priceForHour;
+
+
+    public int getPricePerHour() {
+        return pricePerHour;
     }
 
-    public void setPriceForHour(int priceForHour) {
-        this.priceForHour = priceForHour;
+    public void setPricePerHour(int pricePerHour) {
+        this.pricePerHour = pricePerHour;
     }
+
 
     public boolean isOccupied() {
         return occupied;
