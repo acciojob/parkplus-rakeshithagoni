@@ -27,8 +27,7 @@ public class Spot {
         this.id=id;
     }
 
-    public Spot(int id, SpotType spotType, int priceForHour, boolean occupied) {
-        this.id = id;
+    public Spot( int priceForHour, boolean occupied) {
         this.spotType = spotType;
         this.pricePerHour = priceForHour;
         this.occupied = occupied;

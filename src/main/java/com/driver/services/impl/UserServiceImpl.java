@@ -11,23 +11,27 @@ import java.util.ArrayList;
 @Service
 public class UserServiceImpl implements UserService {
 
+
     @Autowired
     UserRepository userRepository4;
     @Autowired
     UserService userService;
     @Override
     public void deleteUser(Integer userId) {
-     userService.deleteUser(userId);
+        userRepository4.deleteById(userId);
     }
 
     @Override
     public User updatePassword(Integer userId, String password) {
-           return userService.updatePassword(userId,password);
+         User user=  userRepository4.findById(userId).get();
+         user.setPassword(password);
 
+             return user;
     }
 
     @Override
     public void register(String name, String phoneNumber, String password) {
-                userService.register(name,phoneNumber,password);
+        User user = new User(name,phoneNumber,password);
+                userRepository4.save(user);
     }
 }
