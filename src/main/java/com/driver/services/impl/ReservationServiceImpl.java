@@ -25,6 +25,13 @@ public class ReservationServiceImpl implements ReservationService {
     ReservationService reservationService;
     @Override
     public Reservation reserveSpot(Integer userId, Integer parkingLotId, Integer timeInHours, Integer numberOfWheels) throws Exception {
-        return reservationService.reserveSpot(userId,parkingLotId,timeInHours,numberOfWheels);
+  User user= userRepository3.findById(userId).get();
+  ParkingLot parkingLot=parkingLotRepository3.findById(parkingLotId).get();
+    Reservation reservation=new Reservation();
+    reservation.setNumberOfHours(timeInHours);
+
+
+
+        return null;
     }
 }
