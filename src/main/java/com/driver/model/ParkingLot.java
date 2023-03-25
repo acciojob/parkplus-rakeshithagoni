@@ -17,14 +17,6 @@ public class ParkingLot {
 
     private String address;
 
-    public List<Spot> getSpots() {
-        return spots;
-    }
-
-    public void setSpots(List<Spot> spots) {
-        this.spots = spots;
-    }
-
     //parent class
 
     @OneToMany(mappedBy = "parkinglot",cascade = CascadeType.ALL)
@@ -35,6 +27,13 @@ public class ParkingLot {
     public ParkingLot(String name, String address) {
         this.name = name;
         this.address = address;
+    }
+    public List<Spot> getSpots() {
+        return spots;
+    }
+
+    public void setSpots(List<Spot> spots) {
+        this.spots = spots;
     }
 
     public int getId() {

@@ -20,6 +20,11 @@ public class Payment {
         this.paymentMode = paymentMode;
     }
 
+
+    @OneToOne
+@JoinColumn
+private  Reservation reservation;
+
     public Reservation getReservation() {
         return reservation;
     }
@@ -27,10 +32,6 @@ public class Payment {
     public void setReservation(Reservation reservation) {
         this.reservation = reservation;
     }
-
-    @OneToOne
-@JoinColumn
-private  Reservation reservation;
 
     public int getId() {
         return id;
