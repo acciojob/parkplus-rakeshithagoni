@@ -25,6 +25,7 @@ public class ParkingLot {
         this.spots = spots;
     }
 
+    //parent class
     @OneToMany(mappedBy = "parkinglot",cascade = CascadeType.ALL)
     List<Spot> spots=new ArrayList<>();
     public ParkingLot() {
