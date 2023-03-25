@@ -19,7 +19,7 @@ public class ParkingLot {
 
     //parent class
 
-    @OneToMany(mappedBy = "parkinglot",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "parkingLot",cascade = CascadeType.ALL)
    private List<Spot> spotList=new ArrayList<>();
     public ParkingLot() {
     }
