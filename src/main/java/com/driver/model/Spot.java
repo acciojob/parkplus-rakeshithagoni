@@ -83,7 +83,7 @@ public class Spot {
     }
 
 
-    public boolean isOccupied() {
+    public boolean getOccupied() {
         return occupied;
     }
 
