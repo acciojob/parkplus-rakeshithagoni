@@ -22,6 +22,9 @@ public class Spot {
 
     public Spot() {
     }
+    public Spot(int id){
+        this.id=id;
+    }
 
     public Spot(int id, SpotType spotType, int priceForHour, boolean occupied) {
         this.id = id;
@@ -33,11 +36,12 @@ public class Spot {
     @ManyToOne
     @JoinColumn
     private ParkingLot parkingLot;
-
+//parent class
     @OneToMany(mappedBy = "spot",cascade = CascadeType.ALL)
-    List<Reservation> reservationList=new ArrayList<>();
 
-    public ParkingLot getParkingLot() {
+   private List<Reservation> reservationList=new ArrayList<>();
+
+    public ParkingLot   getParkingLot() {
         return parkingLot;
     }
 

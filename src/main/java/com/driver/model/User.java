@@ -28,7 +28,7 @@ public class User {
     }
 
  @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
-    List<Reservation> reservationList=new ArrayList<>();
+    private List<Reservation> reservationList=new ArrayList<>();
 
     public List<Reservation> getReservationList() {
         return reservationList;
